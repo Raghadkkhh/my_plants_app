@@ -1,3 +1,5 @@
+<img width="3840" height="2160" alt="all-screens-plants_v4" src="https://github.com/user-attachments/assets/5ad4df9f-ca83-43d2-bedd-59f150599aac" />
+
 # Planto 🌱
 
 Planto is an iOS app that helps you take care of your plants. Add all your plants in one place and get a reminder when it's time to water each one.
