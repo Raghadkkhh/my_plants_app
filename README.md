@@ -50,5 +50,3 @@ git clone https://github.com/Raghadkkhh/my_plants_app
 - MVVM architecture
 - UserNotifications (local notifications)
 - Liquid Glass (iOS 26)
-
-Add your screenshots here.
