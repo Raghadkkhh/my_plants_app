@@ -38,7 +38,7 @@ struct MyPlantsView: View {
             Text("No reminders set yet..")
                 .font(.headline)
                 .foregroundStyle(Color.appGray)
-                .padding(.top, 307)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
 
         case .allDone:
             VStack(spacing: 0) {
@@ -46,7 +46,7 @@ struct MyPlantsView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 164, height: 200)
-                    .padding(.top, 77)
+                    .padding(.top, 119)
 
                 Text("All Done! 🎉")
                     .font(.title3.bold())
@@ -67,6 +67,8 @@ struct MyPlantsView: View {
                     .padding(.top, 34)
 
                 progressBar
+                    .frame(height: 10)
+                    .padding(.horizontal, 16)
                     .padding(.top, 15)
 
                 plantsList
@@ -76,16 +78,16 @@ struct MyPlantsView: View {
     }
 
     private var progressBar: some View {
-        ZStack(alignment: .leading) {
-            Capsule()
-                .fill(Color.cardBackground)
-                .frame(width: 361, height: 10)
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                Capsule()
+                    .fill(Color.cardBackground)
 
-            Capsule()
-                .fill(Color.appGreen)
-                .frame(width: 361 * viewModel.progress(plants), height: 10)
+                Capsule()
+                    .fill(Color.appGreen)
+                    .frame(width: geometry.size.width * viewModel.progress(plants))
+            }
         }
-        .frame(width: 361, height: 10)
         .animation(.easeInOut, value: viewModel.progress(plants))
     }
 
